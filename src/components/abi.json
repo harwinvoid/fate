@@ -1,0 +1,981 @@
+[
+  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "BattleRythm",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "bit",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "Won",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "randret",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "indexed": false,
+        "internalType": "struct S.Unit[6]",
+        "name": "unitgroup",
+        "type": "tuple[6]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[3]",
+        "name": "oponentid",
+        "type": "uint256[3]"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[3]",
+        "name": "attackerid",
+        "type": "uint256[3]"
+      }
+    ],
+    "name": "BattleResultV2",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256[3]",
+        "name": "formation",
+        "type": "uint256[3]"
+      }
+    ],
+    "name": "DefendingFormationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player1",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player2",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rankPoints",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "league", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "indexInLeague",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct PVP_RankFormatV2.Player",
+        "name": "players",
+        "type": "tuple"
+      }
+    ],
+    "name": "Match",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address[5]",
+        "name": "newOpponents",
+        "type": "address[5]"
+      }
+    ],
+    "name": "OpponentsRefreshed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "league",
+        "type": "uint256"
+      }
+    ],
+    "name": "PlayerJoinedLeague",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newLeague",
+        "type": "uint256"
+      }
+    ],
+    "name": "PlayerPromoted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "indexed": false,
+        "internalType": "struct S.Unit",
+        "name": "AfterUnit",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "uint256", "name": "family", "type": "uint256" },
+          { "internalType": "uint256", "name": "stage", "type": "uint256" }
+        ],
+        "indexed": false,
+        "internalType": "struct S.Status",
+        "name": "AfterStatus",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "bond", "type": "uint256" },
+          { "internalType": "uint256", "name": "stamina", "type": "uint256" },
+          { "internalType": "uint256", "name": "hunger", "type": "uint256" }
+        ],
+        "indexed": false,
+        "internalType": "struct S.Time",
+        "name": "AfterTime",
+        "type": "tuple"
+      }
+    ],
+    "name": "StatChangedResult",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "BONUS_PRODEMOTE_POINT",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "Battle",
+    "outputs": [
+      { "internalType": "contract BattleV4", "name": "", "type": "address" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "Defending_formation",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "playerAddressAA",
+        "type": "address"
+      }
+    ],
+    "name": "Display1full",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "joinedCorrectLeague",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rankPoints",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "league", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "indexInLeague",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct PVP_RankFormatV2.Player",
+        "name": "player",
+        "type": "tuple"
+      },
+      {
+        "internalType": "address[5]",
+        "name": "eligibleOpponents",
+        "type": "address[5]"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rankPoints",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "league", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "indexInLeague",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct PVP_RankFormatV2.Player[5]",
+        "name": "opponentsInfo",
+        "type": "tuple[5]"
+      },
+      {
+        "internalType": "uint256[3][5]",
+        "name": "opponentsUnitID",
+        "type": "uint256[3][5]"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "internalType": "struct S.Unit[3][5]",
+        "name": "opponentsUnit",
+        "type": "tuple[3][5]"
+      },
+      {
+        "internalType": "uint256[5]",
+        "name": "opponentsFought",
+        "type": "uint256[5]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "timeUntilNextFreeRefresh",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "etherCostForRefresh",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "playerAddressAA",
+        "type": "address"
+      }
+    ],
+    "name": "Display2selfDefending",
+    "outputs": [
+      {
+        "internalType": "uint256[3]",
+        "name": "defendingSlots",
+        "type": "uint256[3]"
+      },
+      {
+        "internalType": "uint256[3]",
+        "name": "defendingUnitID",
+        "type": "uint256[3]"
+      },
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "internalType": "struct S.Unit[3]",
+        "name": "defendingUnit",
+        "type": "tuple[3]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "Eligible_opponents",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "FREE_REFRESH_ATTEMPT",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "FREE_REFRESH_OPPONENT_INTERVAL",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "Faught_opponents",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "LEAGUE_LOSE_POINT",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "LEAGUE_NUMBER",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "LEAGUE_PROMOTE_THRESHOLD",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "LEAGUE_WIN_POINT",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "REFRESH_OPPONENT_COST",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SEASON",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "accountAddressToProceed",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "contractRAM",
+    "outputs": [
+      {
+        "internalType": "contract FARPG_RAMInterface",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "contractStorage",
+    "outputs": [
+      {
+        "internalType": "contract IFARPG_Storage",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[3]",
+        "name": "attackers_slot",
+        "type": "uint256[3]"
+      },
+      { "internalType": "uint256", "name": "target", "type": "uint256" }
+    ],
+    "name": "fightTargetOpponent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "league", "type": "uint256" }
+    ],
+    "name": "getAIopponents",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "internalType": "struct S.Unit[3]",
+        "name": "_oppoUnitGroup",
+        "type": "tuple[3]"
+      },
+      {
+        "internalType": "uint256[3]",
+        "name": "_OpponentIDs",
+        "type": "uint256[3]"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "user", "type": "address" }
+    ],
+    "name": "getEligibleOpponents",
+    "outputs": [
+      { "internalType": "address[5]", "name": "", "type": "address[5]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getEmptyReserveOpponents",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint256", "name": "hp", "type": "uint256" },
+          { "internalType": "uint256", "name": "attack", "type": "uint256" },
+          { "internalType": "uint256", "name": "defense", "type": "uint256" },
+          { "internalType": "uint256", "name": "speed", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "intelligence",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "genestrength",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "range", "type": "uint256" },
+          { "internalType": "uint256", "name": "special", "type": "uint256" }
+        ],
+        "internalType": "struct S.Unit[3]",
+        "name": "_oppoUnitGroup",
+        "type": "tuple[3]"
+      },
+      {
+        "internalType": "uint256[3]",
+        "name": "_OpponentIDs",
+        "type": "uint256[3]"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "leagueId", "type": "uint256" },
+      { "internalType": "uint256", "name": "startIndex", "type": "uint256" },
+      { "internalType": "uint256", "name": "endIndex", "type": "uint256" }
+    ],
+    "name": "getLeagueAddressesByRange",
+    "outputs": [
+      { "internalType": "address[]", "name": "", "type": "address[]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLeagueLosePoint",
+    "outputs": [
+      { "internalType": "uint256[7]", "name": "", "type": "uint256[7]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "leagueId", "type": "uint256" }
+    ],
+    "name": "getLeaguePlayerCount",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "leagueId", "type": "uint256" },
+      { "internalType": "uint256", "name": "startIndex", "type": "uint256" },
+      { "internalType": "uint256", "name": "endIndex", "type": "uint256" }
+    ],
+    "name": "getLeaguePlayersByRange",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "rankPoints",
+            "type": "uint256"
+          },
+          { "internalType": "uint256", "name": "league", "type": "uint256" },
+          {
+            "internalType": "uint256",
+            "name": "indexInLeague",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct PVP_RankFormatV2.Player[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLeaguePromoteThreshold",
+    "outputs": [
+      { "internalType": "uint256[7]", "name": "", "type": "uint256[7]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLeagueWinPoint",
+    "outputs": [
+      { "internalType": "uint256[7]", "name": "", "type": "uint256[7]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "leagueId", "type": "uint256" }
+    ],
+    "name": "getPlayersInLeague",
+    "outputs": [
+      { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "user", "type": "address" }
+    ],
+    "name": "getResetTimeAttempts",
+    "outputs": [
+      { "internalType": "uint256[2]", "name": "", "type": "uint256[2]" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "joinGame",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "leaguePlayers",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "players",
+    "outputs": [
+      { "internalType": "uint256", "name": "rankPoints", "type": "uint256" },
+      { "internalType": "uint256", "name": "league", "type": "uint256" },
+      { "internalType": "uint256", "name": "indexInLeague", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "refreshOpponent",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "", "type": "uint256" },
+      { "internalType": "uint256", "name": "", "type": "uint256" }
+    ],
+    "name": "reset_time_attempts",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "newBonusPoint", "type": "uint256" }
+    ],
+    "name": "setBonusPromotePoint",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[3]",
+        "name": "formation",
+        "type": "uint256[3]"
+      }
+    ],
+    "name": "setDefendingFormation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "attempt", "type": "uint256" }
+    ],
+    "name": "setFREE_REFRESH_ATTEMPT",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "interval", "type": "uint256" }
+    ],
+    "name": "setFREE_REFRESH_OPPONENT_INTERVAL",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[7]",
+        "name": "newLeagueNumbers",
+        "type": "uint256[7]"
+      }
+    ],
+    "name": "setLeagueNumber",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[7]",
+        "name": "newLosePoints",
+        "type": "uint256[7]"
+      }
+    ],
+    "name": "setLosePoints",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[7]",
+        "name": "newThresholds",
+        "type": "uint256[7]"
+      }
+    ],
+    "name": "setPromoteThreshold",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "costWei", "type": "uint256" }
+    ],
+    "name": "setREFRESH_OPPONENT_COST",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "newSeason", "type": "uint256" }
+    ],
+    "name": "setSeason",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256[7]",
+        "name": "newWinPoints",
+        "type": "uint256[7]"
+      }
+    ],
+    "name": "setWinPoints",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "treasury",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newContractAAddress",
+        "type": "address"
+      }
+    ],
+    "name": "updateBattleV4Address",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newContractAAddress",
+        "type": "address"
+      }
+    ],
+    "name": "updateRAMContractAAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newContractAAddress",
+        "type": "address"
+      }
+    ],
+    "name": "updateStorageContractAAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_newTreasury", "type": "address" }
+    ],
+    "name": "updateTreasury",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
