@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <header className="app-header">
           <img src={logo} alt="Fate" className="logo" />
           <nav className="nav-menu">
-            {/* <NavLink
+            <NavLink
               to="/"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
@@ -38,9 +38,9 @@ const App: React.FC = () => {
               }
             >
               宠物图鉴
-            </NavLink> */}
+            </NavLink>
             <NavLink
-              to="/events"
+              to="/fate"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
@@ -72,7 +72,7 @@ const App: React.FC = () => {
                 }
               />
               <Route
-                path="/events"
+                path="/fate"
                 element={
                   <div className="events-section">
                     <div className="section-header">
