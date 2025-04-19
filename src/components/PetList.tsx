@@ -96,7 +96,10 @@ const shiningId = showId.map((id) => {
   return `100${id}`;
 });
 
-const visibleId = [...showId, ...shiningId];
+const visibleId = [
+  ...showId, 
+  // ...shiningId
+];
 
 // const otherId = [77,]
 

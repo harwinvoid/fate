@@ -79,6 +79,22 @@
     ],
     "elements": ["Dark"]
   },
+  "12": {
+    "stat": { "hp": 13220, "atk": 2410, "def": 1050, "spd": 550, "int": 450 },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Defense * 2) to all enemies."
+      }
+    ],
+    "elements": ["Dark", "Ice"]
+  },
   "16": {
     "stat": { "hp": 15273, "atk": 2950, "def": 1120, "spd": 610, "int": 680 },
     "skills": [
@@ -405,6 +421,22 @@
       }
     ],
     "elements": ["Fire", "Electric"]
+  },
+  "10025": {
+    "stat": { "hp": 9908, "atk": 3150, "def": 682, "spd": 724, "int": 504 },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 3) to a target."
+      }
+    ],
+    "elements": ["Ice", "Fire"]
   },
   "10069": {
     "stat": { "hp": 11088, "atk": 2688, "def": 829, "spd": 777, "int": 567 },
