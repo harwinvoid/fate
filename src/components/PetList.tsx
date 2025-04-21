@@ -23,7 +23,6 @@ interface PetAttributes {
   [key: string]: PetStat;
 }
 
-// @ts-expect-error ignore
 const petsAttributes: PetAttributes = petsAttr;
 
 export interface Pet extends PetStat {
