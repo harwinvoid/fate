@@ -559,6 +559,7 @@ const pets = [
 ];
 
 const petMap = pets.reduce((acc, pet) => {
+  // @ts-expect-error ignore
   acc[pet.id] = {
     stat: {
       hp: pet.hp,
