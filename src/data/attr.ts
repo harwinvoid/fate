@@ -14,6 +14,21 @@ export default {
       }
     ]
   },
+  "10004": {
+    "stat": { "hp": parseInt(`${9014 * 1.05}`), "atk": parseInt(`${2150 * 1.05}`), "def": parseInt(`${650 * 1.05}`), "spd": parseInt(`${720 * 1.05}`), "int": parseInt(`${620 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Electric",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Electric",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack + (Speed * 3)) to all enemies."
+      }
+    ]
+  },
   "5": {
     "stat": { "hp": 9462, "atk": 2460, "def": 600, "spd": 809, "int": 564 },
     "skills": [
@@ -59,8 +74,38 @@ export default {
       }
     ]
   },
+  "10010": {
+    "stat": { "hp": parseInt(`${7811 * 1.05}`), "atk": parseInt(`${3200 * 1.05}`), "def": parseInt(`${950 * 1.05}`), "spd": parseInt(`${650 * 1.05}`), "int": parseInt(`${510 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Dark",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 3) to a target."
+      }
+    ]
+  },
   "11": {
     "stat": { "hp": 9056, "atk": 2560, "def": 1100, "spd": 590, "int": 470 },
+    "skills": [
+      {
+        "attribute": "Dark",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (hp * 0.5) to all enemies. Damage capped at (Attack * 2.5)."
+      }
+    ]
+  },
+  "10011": {
+    "stat": { "hp": parseInt(`${9056 * 1.05}`), "atk": parseInt(`${2560 * 1.05}`), "def": parseInt(`${1100 * 1.05}`), "spd": parseInt(`${590 * 1.05}`), "int": parseInt(`${470 * 1.05}`) },
     "skills": [
       {
         "attribute": "Dark",
@@ -90,8 +135,39 @@ export default {
       }
     ]
   },
+  "10012": {
+    "stat": { "hp": parseInt(`${13220 * 1.05}`), "atk": parseInt(`${2410 * 1.05}`), "def": parseInt(`${1050 * 1.05}`), "spd": parseInt(`${550 * 1.05}`), "int": parseInt(`${450 * 1.05}`) },
+    "skills": [
+     
+      {
+        "attribute": "Dark",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to all enemies."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Defense * 7) to a target."
+      }
+    ]
+  },
   "16": {
     "stat": { "hp": 15273, "atk": 2950, "def": 1120, "spd": 610, "int": 680 },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Defense * 2) to all enemies."
+      }
+    ]
+  },
+  "10016": {
+    "stat": { "hp": parseInt(`${15273 * 1.05}`), "atk": parseInt(`${2950 * 1.05}`), "def": parseInt(`${1120 * 1.05}`), "spd": parseInt(`${610 * 1.05}`), "int": parseInt(`${680 * 1.05}`) },
     "skills": [
       {
         "attribute": "Ice",
@@ -120,11 +196,26 @@ export default {
       }
     ]
   },
+  "10017": {
+    "stat": { "hp": parseInt(`${12577 * 1.05}`), "atk": parseInt(`${2660 * 1.05}`), "def": parseInt(`${1060 * 1.05}`), "spd": parseInt(`${650 * 1.05}`), "int": parseInt(`${510 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Water",
+        "type": "Aoe",
+        "description": "Deals damage equal to (hp * 0.3) to all enemies."
+      }
+    ]
+  },
   "18": {
     "stat": { "hp": 10268, "atk": 3000, "def": 900, "spd": 570, "int": 480 },
     "skills": [
       {
-        "attribute": "Dark",
+        "attribute": "Water",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
@@ -132,6 +223,51 @@ export default {
         "attribute": "Dark",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 3.5) to a target."
+      }
+    ]
+  },
+  "10018": {
+    "stat": { "hp": parseInt(`${10268 * 1.05}`), "atk": parseInt(`${3000 * 1.05}`), "def": parseInt(`${900 * 1.05}`), "spd": parseInt(`${570 * 1.05}`), "int": parseInt(`${480 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Water",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 3.5) to a target."
+      }
+    ]
+  },
+  "25": {
+    "stat": { "hp": 9437, "atk": 300, "def": 650, "spd": 690, "int": 480 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + Target's Defense * 3) to a target. Damage capped at (Attack * 6)."
+      }
+    ]
+  },
+  "10025": {
+    "stat": { "hp": 9908, "atk": 3150, "def": 682, "spd": 724, "int": 504 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + Target's Defense * 3) to a target. Damage capped at (Attack * 6)."
       }
     ]
   },
@@ -165,8 +301,53 @@ export default {
       }
     ]
   },
+  "10026": {
+    "stat": { "hp": 9304, "atk": 2835, "def": 630, "spd": 840, "int": 619 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Nature",
+        "type": "Aoe",
+        "description": "Deals damage equal to  (Intelligence * 4) to all enemies."
+      }
+    ]
+  },
+  "10027": {
+    "stat": { "hp": parseInt(`${14609 * 1.05}`), "atk": parseInt(`${2800 * 1.05}`), "def": parseInt(`${890 * 1.05}`), "spd": parseInt(`${550 * 1.05}`), "int": parseInt(`${660 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Electric",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Electric",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + (Target's Speed * 6)) to a target."
+      }
+    ]
+  },
   "28": {
     "stat": { "hp": 13366, "atk": 3100, "def": 750, "spd": 720, "int": 600 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Water",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack *4) if Target's Defense > 1000, otherwise (Attack*3) to a target."
+      }
+    ]
+  },
+  "10028": {
+    "stat": { "hp": parseInt(`${13366 * 1.05}`), "atk": parseInt(`${3100 * 1.05}`), "def": parseInt(`${750 * 1.05}`), "spd": parseInt(`${720 * 1.05}`), "int": parseInt(`${600 * 1.05}`) },
     "skills": [
       {
         "attribute": "Fire",
@@ -195,11 +376,41 @@ export default {
       }
     ]
   },
+  "10039": {
+    "stat": { "hp": parseInt(`${12120 * 1.05}`), "atk": parseInt(`${2420 * 1.05}`), "def": parseInt(`${590 * 1.05}`), "spd": parseInt(`${750 * 1.05}`), "int": parseInt(`${660 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Aoe",
+        "description": "All allies gain (Attack * 0.5), then deal damage equal to (Attack * 0.2) to all enemies."
+      }
+    ]
+  },
   "40": {
     "stat": { "hp": 9800, "atk": 2670, "def": 700, "spd": 710, "int": 780 },
     "skills": [
       {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
         "attribute": "Light",
+        "type": "Single",
+        "description": "Gain 5000 Health, deal damage equals to (Health * 0.5)."
+      }
+    ]
+  },
+  "10040": {
+    "stat": { "hp": parseInt(`${9800 * 1.05}`), "atk": parseInt(`${2670 * 1.05}`), "def": parseInt(`${700 * 1.05}`), "spd": parseInt(`${710 * 1.05}`), "int": parseInt(`${780 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
@@ -212,6 +423,21 @@ export default {
   },
   "43": {
     "stat": { "hp": 9050, "atk": 2610, "def": 1150, "spd": 620, "int": 520 },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + (Target Health * 0.5)) to a target. Damage capped at (Attack * 4)."
+      }
+    ]
+  },
+  "10043": {
+    "stat": { "hp": parseInt(`${9050 * 1.05}`), "atk": parseInt(`${2610 * 1.05}`), "def": parseInt(`${1150 * 1.05}`), "spd": parseInt(`${620 * 1.05}`), "int": parseInt(`${520 * 1.05}`) },
     "skills": [
       {
         "attribute": "Nature",
@@ -240,6 +466,21 @@ export default {
       }
     ]
   },
+  "10044": {
+    "stat": { "hp": parseInt(`${11020 * 1.05}`), "atk": parseInt(`${2810 * 1.05}`), "def": parseInt(`${720 * 1.05}`), "spd": parseInt(`${635 * 1.05}`), "int": parseInt(`${524 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deal damage equal to (Attack * 1) to all enemies, then reapply DarkElement to all enemies."
+      }
+    ]
+  },
   "47": {
     "stat": { "hp": 12905, "atk": 2850, "def": 1200, "spd": 590, "int": 690 },
     "skills": [
@@ -251,15 +492,46 @@ export default {
       {
         "attribute": "Ice",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * 4.5) if Target's Defense > 1000, otherwise (Attack *2) to a target."
+        "description": "Deals damage equal to (Attack * 4.5) if Target's Defense > 1000, otherwise (Attack * 2.8) to a target."
       }
     ]
   },
+  "10047": {
+    "stat": { "hp": parseInt(`${12905 * 1.05}`), "atk": parseInt(`${2850 * 1.05}`), "def": parseInt(`${1200 * 1.05}`), "spd": parseInt(`${590 * 1.05}`), "int": parseInt(`${690 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 4.5) if Target's Defense > 1000, otherwise (Attack * 2.8) to a target."
+      }
+    ]
+  },
+  
   "48": {
     "stat": { "hp": 9950, "atk": 3600, "def": 610, "spd": 500, "int": 750 },
     "skills": [
       {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
         "attribute": "Light",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 1) to all enemies, then apply Light to allies."
+      }
+    ]
+  },
+  "10048": {
+    "stat": { "hp": parseInt(`${9950 * 1.05}`), "atk": parseInt(`${3600 * 1.05}`), "def": parseInt(`${610 * 1.05}`), "spd": parseInt(`${500 * 1.05}`), "int": parseInt(`${750 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.5) to a target."
       },
@@ -285,18 +557,48 @@ export default {
       }
     ]
   },
+  "10069": {
+    "stat": { "hp": parseInt(`${10560 * 1.05}`), "atk": parseInt(`${2560 * 1.05}`), "def": parseInt(`${790 * 1.05}`), "spd": parseInt(`${740 * 1.05}`), "int": parseInt(`${540 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Electric",
+        "type": "Single",
+        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deal damage  (Attack * 5)  if this hit triggers damage type elemental reaction, otherwise (Attack * 3) to a target."
+      }
+    ]
+  },
   "71": {
     "stat": { "hp": 14650, "atk": 2250, "def": 870, "spd": 621, "int": 640 },
     "skills": [
       {
-        "attribute": "Water",
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
       {
         "attribute": "Water",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * 2.5) to target, then reduce target's Defence by (25%)."
+        "description": "Deals damage equal to (Attack * 2.5) to target, then reduce target's Defence by (30%)."
+      }
+    ]
+  },
+  "10071": {
+    "stat": { "hp": parseInt(`${14650 * 1.05}`), "atk": parseInt(`${2250 * 1.05}`), "def": parseInt(`${870 * 1.05}`), "spd": parseInt(`${621 * 1.05}`), "int": parseInt(`${640 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Water",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to target, then reduce target's Defence by (30%)."
       }
     ]
   },
@@ -315,11 +617,41 @@ export default {
       }
     ]
   },
+  "10073": {
+    "stat": { "hp": parseInt(`${12200 * 1.05}`), "atk": parseInt(`${2140 * 1.05}`), "def": parseInt(`${750 * 1.05}`), "spd": parseInt(`${745 * 1.05}`), "int": parseInt(`${630 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
+        "attribute": "Electric",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 3) if has Electric on self, otherwise (Attack * 1.5) to all enemies."
+      }
+    ]
+  },
   "75": {
     "stat": { "hp": 12230, "atk": 2750, "def": 680, "spd": 745, "int": 630 },
     "skills": [
       {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
         "attribute": "Water",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 4) if target has Ice Element, otherwise (Attack *2.5) to a target."
+      }
+    ]
+  },
+  "10075": {
+    "stat": { "hp": parseInt(`${12230 * 1.05}`), "atk": parseInt(`${2750 * 1.05}`), "def": parseInt(`${680 * 1.05}`), "spd": parseInt(`${745 * 1.05}`), "int": parseInt(`${630 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.5) to a target."
       },
@@ -334,9 +666,24 @@ export default {
     "stat": { "hp": 13660, "atk": 2560, "def": 750, "spd": 723, "int": 598 },
     "skills": [
       {
-        "attribute": "Light",
+        "attribute": "Electric",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * 2.2) to a target."
+        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Light",
+        "type": "Aoe",
+        "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
+      }
+    ]
+  },
+  "10077": {
+    "stat": { "hp": 14343, "atk": 2688, "def": 787, "spd": 759, "int": 627 },
+    "skills": [
+      {
+        "attribute": "Electric",
+        "type": "Single",
+        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
       },
       {
         "attribute": "Light",
@@ -349,7 +696,7 @@ export default {
     "stat": { "hp": 11200, "atk": 2950, "def": 795, "spd": 675, "int": 425 },
     "skills": [
       {
-        "attribute": "Water",
+        "attribute": "Nature",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
@@ -360,8 +707,39 @@ export default {
       }
     ]
   },
+  "10079": {
+    "stat": { "hp": parseInt(`${11200 * 1.05}`), "atk": parseInt(`${2950 * 1.05}`), "def": parseInt(`${795 * 1.05}`), "spd": parseInt(`${675 * 1.05}`), "int": parseInt(`${425 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Water",
+        "type": "Single",
+        "description": "Deals damage equal to (Health * 0.4 + Target Health * 0.4) to a target."
+      }
+    ]
+  },
+
   "81": {
     "stat": { "hp": 10540, "atk": 2460, "def": 650, "spd": 710, "int": 550 },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2 + Speed * 5) to a target."
+      }
+    ]
+  },
+  "10081": {
+    "stat": { "hp": parseInt(`${10540 * 1.05}`), "atk": parseInt(`${2460 * 1.05}`), "def": parseInt(`${650 * 1.05}`), "spd": parseInt(`${710 * 1.05}`), "int": parseInt(`${550 * 1.05}`) },
     "skills": [
       {
         "attribute": "Fire",
@@ -371,7 +749,7 @@ export default {
       {
         "attribute": "Fire",
         "type": "Single",
-        "description": "Deals damage equal to (Attack*2 + Speed * 5) to a target."
+        "description": "Deals damage equal to (Attack * 2 + Speed * 5) to a target."
       }
     ]
   },
@@ -379,7 +757,22 @@ export default {
     "stat": { "hp": 11200, "atk": 2960, "def": 980, "spd": 671, "int": 650 },
     "skills": [
       {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
         "attribute": "Water",
+        "type": "Single",
+        "description": "Reduce target's Defence by (30%), then deals damage equal to (Attack * 3) to on a target."
+      }
+    ]
+  },
+  "10082": {
+    "stat": { "hp": parseInt(`${11200 * 1.05}`), "atk": parseInt(`${2960 * 1.05}`), "def": parseInt(`${980 * 1.05}`), "spd": parseInt(`${671 * 1.05}`), "int": parseInt(`${650 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Nature",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
@@ -425,78 +818,4 @@ export default {
       }
     ]
   },
-  "10025": {
-    "stat": { "hp": 9908, "atk": 3150, "def": 682, "spd": 724, "int": 504 },
-    "skills": [
-      {
-        "attribute": "Fire",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 2) to a target."
-      },
-      {
-        "attribute": "Ice",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack + Target's Defense * 3) to a target. Damage capped at (Attack * 6)."
-      }
-    ]
-  },
-  "10026": {
-    "stat": { "hp": 9304, "atk": 2835, "def": 630, "spd": 840, "int": 619 },
-    "skills": [
-      {
-        "attribute": "Fire",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 2) to a target."
-      },
-      {
-        "attribute": "Nature",
-        "type": "Aoe",
-        "description": "Deals damage equal to  (Intelligence * 4) to all enemies."
-      }
-    ]
-  },
-  "10044": {
-    "skills": [
-      {
-        "attribute": "Nature",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 2.2) to a target."
-      },
-      {
-        "attribute": "Dark",
-        "type": "Aoe",
-        "description": "Deal damage equal to (Attack * 1) to all enemies, then reapply DarkElement to all enemies."
-      }
-    ]
-  },
-  "10069": {
-    "stat": { "hp": 11088, "atk": 2688, "def": 829, "spd": 777, "int": 567 },
-    "skills": [
-      {
-        "attribute": "Electric",
-        "type": "Single",
-        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
-      },
-      {
-        "attribute": "Fire",
-        "type": "Single",
-        "description": "Deal damage  (Attack * 5)  if this hit triggers damage type elemental reaction, otherwise (Attack * 3) to a target."
-      }
-    ]
-  },
-  "10077": {
-    "stat": { "hp": 14343, "atk": 2688, "def": 787, "spd": 759, "int": 627 },
-    "skills": [
-      {
-        "attribute": "Electric",
-        "type": "Single",
-        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
-      },
-      {
-        "attribute": "Light",
-        "type": "Aoe",
-        "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
-      }
-    ]
-  }
 }
