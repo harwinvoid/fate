@@ -1,58 +1,36 @@
 import React, { useEffect, useState } from "react";
 import "./PetList.less";
-import dark from "../assets/elements/dark.png";
-import fire from "../assets/elements/fire.png";
-import water from "../assets/elements/water.png";
-import nature from "../assets/elements/nature.png";
-import electric from "../assets/elements/electric.png";
-import light from "../assets/elements/light.png";
-import ice from "../assets/elements/ice.png";
-import petsAttr from "../data/attr.json";
 
-interface PetAttributes {
-  [key: string]: {
-    stat: {
-      hp: number;
-      atk: number;
-      def: number;
-      spd: number;
-      int: number;
-    };
-    skills: Array<{
-      attribute: string;
-      type: string;
-      description: string;
-    }>;
-    elements?: string[];
-  };
-}
+import petsAttr from "../data/attr";
+import { PetCard } from "../ui/pet-card";
 
-const petsAttributes: PetAttributes = petsAttr;
-
-interface Pet {
-  id: string;
-  name: string;
-  image: string;
-  elements: string[];
+interface PetStat {
   stat: {
     hp: number;
     atk: number;
     def: number;
-    int: number;
     spd: number;
+    int: number;
   };
+  skills: Array<{
+    attribute: string;
+    type: string;
+    description: string;
+  }>;
 }
 
-const elementIcons = {
-  dark,
-  fire,
-  water,
-  nature,
-  electric,
-  light,
-  ice,
-};
+interface PetAttributes {
+  [key: string]: PetStat;
+}
 
+// @ts-expect-error ignore
+const petsAttributes: PetAttributes = petsAttr;
+
+export interface Pet extends PetStat {
+  id: string;
+  name: string;
+  image: string;
+}
 
 const showId = [
   "4",
@@ -96,78 +74,70 @@ const shiningId = showId.map((id) => {
   return `100${id}`;
 });
 
-const visibleId = [
-  ...showId, 
-  // ...shiningId
-];
+const visibleId = [...showId, ...shiningId];
 
-// const otherId = [77,]
-
-type SortField = 'hp' | 'atk' | 'def' | 'int' | 'spd';
-type SortDirection = 'asc' | 'desc';
+type SortField = "hp" | "atk" | "def" | "int" | "spd";
+type SortDirection = "asc" | "desc";
 
 interface SortState {
   field: SortField;
   direction: SortDirection;
 }
 
-const formatNumber = (num: number): string => {
-  return num.toLocaleString('en-US');
-};
-
-const PetList: React.FC<{ pets: Pet[] }> = () => {
+const PetList = () => {
   const [petList, setPetList] = useState<Pet[]>([]);
   const [sortState, setSortState] = useState<SortState>({
-    field: 'hp',
-    direction: 'desc'
+    field: "hp",
+    direction: "desc",
   });
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchPetList = async () => {
-    const data = await fetch(
-      "https://api.paintswap.finance/v2/metadata/0xf2ab95244ce9f89116bee475fa3e6676f1a4daf7?numToSkip=0&numToFetch=200&orderBy=rank&orderDirection=desc&version=2&getUri=false&isInFNFTMarketplace=false&chainId=146&address=0xf2ab95244ce9f89116bee475fa3e6676f1a4daf7&allowNSFW=true&traits=%5B%5D&drillDown=false&useSaleFilters=false",
-      {
-        headers: {
-          accept: "application/json, text/plain, */*",
-          "accept-language": "zh-CN,zh;q=0.9,en-AS;q=0.8,en;q=0.7,zh-TW;q=0.6",
-          "if-none-match": 'W/"a13c-aTZX8wFsXXA8ciWRQxCKM1mrjFU"',
-          priority: "u=1, i",
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "cross-site",
-        },
-        referrerPolicy: "no-referrer",
-        body: null,
-        method: "GET",
-        mode: "cors",
-        credentials: "omit",
-      }
-    );
-    const json = await data.json();
-    console.log(json);
-    const petList = json.nfts.map(
-      (nft: { tokenId: number; name: string; image: string }) => ({
-        id: nft.tokenId,
-        name: nft.name,
-        image: nft.image,
-        // rarity: nft.rarity,
-        // elements: nft.elements,
-        // hp: nft.hp,
-        // str: nft.str,
-        // def: nft.def,
-      })
-    ) as Pet[];
+    try {
+      setIsLoading(true);
+      const data = await fetch(
+        "https://api.paintswap.finance/v2/metadata/0xf2ab95244ce9f89116bee475fa3e6676f1a4daf7?numToSkip=0&numToFetch=200&orderBy=rank&orderDirection=desc&version=2&getUri=false&isInFNFTMarketplace=false&chainId=146&address=0xf2ab95244ce9f89116bee475fa3e6676f1a4daf7&allowNSFW=true&traits=%5B%5D&drillDown=false&useSaleFilters=false",
+        {
+          headers: {
+            accept: "application/json, text/plain, */*",
+            "accept-language":
+              "zh-CN,zh;q=0.9,en-AS;q=0.8,en;q=0.7,zh-TW;q=0.6",
+            "if-none-match": 'W/"a13c-aTZX8wFsXXA8ciWRQxCKM1mrjFU"',
+            priority: "u=1, i",
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "cross-site",
+          },
+          referrerPolicy: "no-referrer",
+          body: null,
+          method: "GET",
+          mode: "cors",
+          credentials: "omit",
+        }
+      );
+      const json = await data.json();
+      const petList = json.nfts.map(
+        (nft: { tokenId: number; name: string; image: string }) => ({
+          id: nft.tokenId,
+          name: nft.name,
+          image: nft.image,
+        })
+      ) as Pet[];
 
-    setPetList(
-      petList
-        .filter((pet: Pet) =>
-         visibleId.includes(pet.id.toString())
-        )
-        .map((pet: Pet) => ({
-          ...pet,
-          ...petsAttributes[pet.id],
-        }))
-        .sort((a, b) => Number(a.id) - Number(b.id)) as Pet[]
-    );
+      setPetList(
+        petList
+          .filter((pet: Pet) => visibleId.includes(pet.id.toString()))
+          .map((pet: Pet) => ({
+            ...pet,
+            ...petsAttributes[pet.id],
+          }))
+      );
+    } catch (error) {
+      console.error("Error fetching pet list:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -175,91 +145,68 @@ const PetList: React.FC<{ pets: Pet[] }> = () => {
   }, []);
 
   const handleSort = (field: SortField) => {
-    setSortState(prev => ({
+    setSortState((prev) => ({
       field,
-      direction: prev.field === field && prev.direction === 'desc' ? 'asc' : 'desc'
+      direction:
+        prev.field === field && prev.direction === "desc" ? "asc" : "desc",
     }));
   };
 
-  const sortedPetList = [...petList].sort((a, b) => {
-    const aValue = a.stat?.[sortState.field] || 0;
-    const bValue = b.stat?.[sortState.field] || 0;
-    return sortState.direction === 'asc' ? aValue - bValue : bValue - aValue;
-  });
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  const filteredAndSortedPetList = [...petList]
+    .filter((pet) => pet.name.toLowerCase().includes(searchQuery))
+    .sort((a, b) => {
+      const aValue = a.stat?.[sortState.field] || 0;
+      const bValue = b.stat?.[sortState.field] || 0;
+      return sortState.direction === "asc" ? aValue - bValue : bValue - aValue;
+    });
 
   return (
     <div className="pet-list">
-      <div className="sort-controls">
-        {['HP', 'ATK', 'DEF', 'INT', 'SPD'].map(stat => (
-          <button
-            key={stat}
-            className={`btn btn-sm ${sortState.field === stat.toLowerCase() ? 'btn-primary' : 'btn-ghost'}`}
-            onClick={() => handleSort(stat.toLowerCase() as SortField)}
-          >
-            {stat} {sortState.field === stat.toLowerCase() && (
-              <span className="ml-1">
-                {sortState.direction === 'asc' ? '↑' : '↓'}
-              </span>
-            )}
-          </button>
-        ))}
-      </div>
-      {sortedPetList.map((pet) => (
-        <div key={pet.id} className={`pet-card`}>
-          <div className="pet-header">
-            <h3 className="pet-name">{pet.name}</h3>
-          </div>
-
-          <div className="pet-image-container">
-            <img src={pet.image} alt={pet.name} className="pet-image" />
-
-            <div className="pet-elements">
-              {pet.elements?.map((element, index) => (
-                <div
-                  key={index}
-                  className={`element-icon`}
-                  style={{
-                    backgroundImage: `url(${
-                      elementIcons[
-                        element.toLocaleLowerCase() as keyof typeof elementIcons
-                      ]
-                    })`,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="pet-stats">
-            <div className="stat-row">
-              <div className="stat">
-                <span className="stat-label">HP</span>
-                <span className="stat-value">{pet.stat?.hp ? formatNumber(pet.stat.hp) : "-"}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">ATK</span>
-                <span className="stat-value">{pet.stat?.atk || "-"}</span>
-              </div>
-            </div>
-            <div className="stat-row">
-              <div className="stat">
-                <span className="stat-label">DEF</span>
-                <span className="stat-value">{pet.stat?.def || "-"}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">INT</span>
-                <span className="stat-value">{pet.stat?.int || "-"}</span>
-              </div>
-            </div>
-            <div className="stat-row">
-              <div className="stat">
-                <span className="stat-label">SPD</span>
-                <span className="stat-value">{pet.stat?.spd || "-"}</span>
-              </div>
-            </div>
-          </div>
+      <div className="controls-container">
+        <div className="sort-controls">
+          {["HP", "ATK", "DEF", "INT", "SPD"].map((stat) => (
+            <button
+              key={stat}
+              className={`btn btn-sm ${
+                sortState.field === stat.toLowerCase()
+                  ? "btn-primary"
+                  : "btn-ghost"
+              }`}
+              onClick={() => handleSort(stat.toLowerCase() as SortField)}
+            >
+              {stat}{" "}
+              {sortState.field === stat.toLowerCase() && (
+                <span className="ml-1">
+                  {sortState.direction === "asc" ? "↑" : "↓"}
+                </span>
+              )}
+            </button>
+          ))}
         </div>
-      ))}
+        <div className="search-controls">
+          <input
+            type="text"
+            placeholder="Search By Name..."
+            className="search-input"
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+        </div>
+      </div>
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <div className="loading-text">加载中...</div>
+        </div>
+      ) : (
+        filteredAndSortedPetList.map((pet) => (
+          <PetCard key={pet.id} pet={pet} />
+        ))
+      )}
     </div>
   );
 };

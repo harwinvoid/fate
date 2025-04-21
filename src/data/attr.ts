@@ -1,4 +1,4 @@
-{
+export default {
   "4": {
     "stat": { "hp": 9014, "atk": 2150, "def": 650, "spd": 720, "int": 620 },
     "skills": [
@@ -12,8 +12,7 @@
         "type": "Aoe",
         "description": "Deals damage equal to (Attack + (Speed * 3)) to all enemies."
       }
-    ],
-    "elements": ["Electric", "Fire"]
+    ]
   },
   "5": {
     "stat": { "hp": 9462, "atk": 2460, "def": 600, "spd": 809, "int": 564 },
@@ -28,72 +27,68 @@
         "type": "Aoe",
         "description": "Deals damage equal to (Attack * 1.5) to all enemies."
       }
-    ],
-    "elements": ["Electric", "Fire"]
+    ]
   },
   "6": {
     "stat": { "hp": 8765, "atk": 2200, "def": 670, "spd": 810, "int": 740 },
     "skills": [
       {
-        "attribute": "Light",
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
         "attribute": "Light",
-        "type": "AllyAoe",
-        "description": "Restores hitpoints to all allies equal to Speed."
+        "type": "Aoe",
+        "description": "Restores hp to all allies equal to Speed."
       }
-    ],
-    "elements": ["Fire", "Light"]
+    ]
   },
   "10": {
     "stat": { "hp": 7811, "atk": 3200, "def": 950, "spd": 650, "int": 510 },
     "skills": [
       {
-        "attribute": "Ice",
+        "attribute": "Dark",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
-        "attribute": "Ice",
-        "type": "Aoe",
-        "description": "Deals damage equal to (Defense * 2) to all enemies."
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 3) to a target."
       }
-    ],
-    "elements": ["Dark", "Fire"]
+    ]
   },
   "11": {
     "stat": { "hp": 9056, "atk": 2560, "def": 1100, "spd": 590, "int": 470 },
     "skills": [
       {
-        "attribute": "Ice",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 2) to a target."
-      },
-      {
-        "attribute": "Ice",
-        "type": "Aoe",
-        "description": "Deals damage equal to (Defense * 2) to all enemies."
-      }
-    ],
-    "elements": ["Dark"]
-  },
-  "12": {
-    "stat": { "hp": 13220, "atk": 2410, "def": 1050, "spd": 550, "int": 450 },
-    "skills": [
-      {
-        "attribute": "Ice",
+        "attribute": "Dark",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
         "attribute": "Dark",
         "type": "Aoe",
-        "description": "Deals damage equal to (Defense * 2) to all enemies."
+        "description": "Deals damage equal to (hp * 0.5) to all enemies. Damage capped at (Attack * 2.5)."
       }
-    ],
-    "elements": ["Dark", "Ice"]
+    ]
+  },
+  "12": {
+    "stat": { "hp": 13220, "atk": 2410, "def": 1050, "spd": 550, "int": 450 },
+    "skills": [
+     
+      {
+        "attribute": "Dark",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to all enemies."
+      },
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Defense * 7) to a target."
+      }
+    ]
   },
   "16": {
     "stat": { "hp": 15273, "atk": 2950, "def": 1120, "spd": 610, "int": 680 },
@@ -108,24 +103,22 @@
         "type": "Aoe",
         "description": "Deals damage equal to (Defense * 2) to all enemies."
       }
-    ],
-    "elements": ["Ice"]
+    ]
   },
   "17": {
     "stat": { "hp": 12577, "atk": 2660, "def": 1060, "spd": 650, "int": 510 },
     "skills": [
       {
-        "attribute": "Water",
+        "attribute": "Ice",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
         "attribute": "Water",
         "type": "Aoe",
-        "description": "Deals damage equal to (Hitpoints * 0.3) to all enemies."
+        "description": "Deals damage equal to (hp * 0.3) to all enemies."
       }
-    ],
-    "elements": ["Water", "Ice"]
+    ]
   },
   "18": {
     "stat": { "hp": 10268, "atk": 3000, "def": 900, "spd": 570, "int": 480 },
@@ -140,8 +133,22 @@
         "type": "Single",
         "description": "Deals damage equal to (Attack * 3.5) to a target."
       }
-    ],
-    "elements": ["Dark", "Water"]
+    ]
+  },
+  "26": {
+    "stat": { "hp": 8861, "atk": 2700, "def": 600, "spd": 800, "int": 590 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Nature",
+        "type": "Aoe",
+        "description": "Deals damage equal to  (Intelligence * 4) to all enemies."
+      }
+    ]
   },
   "27": {
     "stat": { "hp": 14609, "atk": 2800, "def": 890, "spd": 550, "int": 660 },
@@ -149,15 +156,14 @@
       {
         "attribute": "Electric",
         "type": "Single",
-        "description": "Deals damage equal to (Attack + (Speed*2)) to a target."
+        "description": "Deals damage equal to (Attack + (Speed * 2)) to a target."
       },
       {
         "attribute": "Electric",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * Target's Speed * 0) to a target."
+        "description": "Deals damage equal to (Attack + (Target's Speed * 6)) to a target."
       }
-    ],
-    "elements": ["Electric"]
+    ]
   },
   "28": {
     "stat": { "hp": 13366, "atk": 3100, "def": 750, "spd": 720, "int": 600 },
@@ -168,12 +174,11 @@
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
-        "attribute": "Fire",
+        "attribute": "Water",
         "type": "Single",
         "description": "Deals damage equal to (Attack *4) if Target's Defense > 1000, otherwise (Attack*3) to a target."
       }
-    ],
-    "elements": ["Fire", "Water"]
+    ]
   },
   "39": {
     "stat": { "hp": 12120, "atk": 2420, "def": 590, "spd": 750, "int": 660 },
@@ -188,8 +193,7 @@
         "type": "Aoe",
         "description": "All allies gain (Attack * 0.5), then deal damage equal to (Attack * 0.2) to all enemies."
       }
-    ],
-    "elements": ["Fire"]
+    ]
   },
   "40": {
     "stat": { "hp": 9800, "atk": 2670, "def": 700, "spd": 710, "int": 780 },
@@ -204,30 +208,28 @@
         "type": "Single",
         "description": "Gain 5000 Health, deal damage equals to (Health * 0.5)."
       }
-    ],
-    "elements": ["Light"]
+    ]
   },
   "43": {
     "stat": { "hp": 9050, "atk": 2610, "def": 1150, "spd": 620, "int": 520 },
     "skills": [
       {
-        "attribute": "Ice",
+        "attribute": "Nature",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
       {
         "attribute": "Ice",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * (Target Health * 0.5)) to a target."
+        "description": "Deals damage equal to (Attack + (Target Health * 0.5)) to a target. Damage capped at (Attack * 4)."
       }
-    ],
-    "elements": ["Ice", "Nature"]
+    ]
   },
   "44": {
-    "stat": { "hp": 10020, "atk": 2910, "def": 720, "spd": 635, "int": 524 },
+    "stat": { "hp": 11020, "atk": 2810, "def": 720, "spd": 635, "int": 524 },
     "skills": [
       {
-        "attribute": "Dark",
+        "attribute": "Nature",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.2) to a target."
       },
@@ -236,8 +238,7 @@
         "type": "Aoe",
         "description": "Deal damage equal to (Attack * 1) to all enemies, then reapply DarkElement to all enemies."
       }
-    ],
-    "elements": ["Dark", "Nature"]
+    ]
   },
   "47": {
     "stat": { "hp": 12905, "atk": 2850, "def": 1200, "spd": 590, "int": 690 },
@@ -273,14 +274,14 @@
     "stat": { "hp": 10560, "atk": 2560, "def": 790, "spd": 740, "int": 540 },
     "skills": [
       {
-        "attribute": "Fire",
+        "attribute": "Electric",
         "type": "Single",
-        "description": "Deals damage equal to (Attack *2) to a target."
+        "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
       },
       {
         "attribute": "Fire",
         "type": "Single",
-        "description": "Deals damage (Attack * 5) if this hit triggers elemental reaction, otherwise (Attack *3) to a target."
+        "description": "Deal damage  (Attack * 5)  if this hit triggers damage type elemental reaction, otherwise (Attack * 3) to a target."
       }
     ]
   },
@@ -295,7 +296,7 @@
       {
         "attribute": "Water",
         "type": "Single",
-        "description": "Deals damage equal to (Attack *2.5) to target, then reduce target's Defence by (30%)."
+        "description": "Deals damage equal to (Attack * 2.5) to target, then reduce target's Defence by (25%)."
       }
     ]
   },
@@ -303,17 +304,16 @@
     "stat": { "hp": 12200, "atk": 2140, "def": 750, "spd": 745, "int": 630 },
     "skills": [
       {
-        "attribute": "Electric",
+        "attribute": "Ice",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2.5) to a target."
       },
       {
         "attribute": "Electric",
         "type": "Aoe",
-        "description": "Deals damage equal to (Attack * 3) if has Electric on self, otherwise (Attack1.5) to all enemies."
+        "description": "Deals damage equal to (Attack * 3) if has Electric on self, otherwise (Attack * 1.5) to all enemies."
       }
-    ],
-    "elements": ["Electric", "Ice"]
+    ]
   },
   "75": {
     "stat": { "hp": 12230, "atk": 2750, "def": 680, "spd": 745, "int": 630 },
@@ -393,18 +393,22 @@
   "10005": {
     "stat": { "hp": 9935, "atk": 2583, "def": 630, "spd": 849, "int": 581 },
     "skills": [
+      // {
+      //   "attribute": "Fire",
+      //   "type": "Single",
+      //   "description": "Deals damage equal to (Attack + 2) to a target."
+      // },
       {
-        "attribute": "Fire",
+        "attribute": "Electric",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * 2) to a target."
+        "description": "Deals damage equal to (Attack + (Speed * 2)) to a target."
       },
       {
         "attribute": "Fire",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 3) to a target."
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 1.5) to all enemies."
       }
-    ],
-    "elements": ["Fire", "Electric"]
+    ]
   },
   "10006": {
     "stat": { "hp": 9203, "atk": 2310, "def": 703, "spd": 850, "int": 777 },
@@ -415,59 +419,84 @@
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
-        "attribute": "Fire",
-        "type": "Single",
-        "description": "Deals damage equal to (Attack * 3) to a target."
+        "attribute": "Light",
+        "type": "Aoe",
+        "description": "Restores hp to all allies equal to Speed."
       }
-    ],
-    "elements": ["Fire", "Electric"]
+    ]
   },
   "10025": {
     "stat": { "hp": 9908, "atk": 3150, "def": 682, "spd": 724, "int": 504 },
     "skills": [
       {
-        "attribute": "Ice",
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack + Target's Defense * 3) to a target. Damage capped at (Attack * 6)."
+      }
+    ]
+  },
+  "10026": {
+    "stat": { "hp": 9304, "atk": 2835, "def": 630, "spd": 840, "int": 619 },
+    "skills": [
+      {
         "attribute": "Fire",
         "type": "Single",
-        "description": "Deals damage equal to (Attack * 3) to a target."
+        "description": "Deals damage equal to (Attack * 2) to a target."
+      },
+      {
+        "attribute": "Nature",
+        "type": "Aoe",
+        "description": "Deals damage equal to  (Intelligence * 4) to all enemies."
       }
-    ],
-    "elements": ["Ice", "Fire"]
+    ]
+  },
+  "10044": {
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deal damage equal to (Attack * 1) to all enemies, then reapply DarkElement to all enemies."
+      }
+    ]
   },
   "10069": {
     "stat": { "hp": 11088, "atk": 2688, "def": 829, "spd": 777, "int": 567 },
     "skills": [
       {
-        "attribute": "Light",
-        "type": "Aoe",
-        "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
-      },
-      {
         "attribute": "Electric",
         "type": "Single",
         "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deal damage  (Attack * 5)  if this hit triggers damage type elemental reaction, otherwise (Attack * 3) to a target."
       }
-    ],
-    "elements": ["Light", "Electric"]
+    ]
   },
   "10077": {
     "stat": { "hp": 14343, "atk": 2688, "def": 787, "spd": 759, "int": 627 },
     "skills": [
       {
-        "attribute": "Light",
-        "type": "Aoe",
-        "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
-      },
-      {
         "attribute": "Electric",
         "type": "Single",
         "description": "Deal damage equal to (Attack + (Speed * 2)) to a target."
+      },
+      {
+        "attribute": "Light",
+        "type": "Aoe",
+        "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
       }
-    ],
-    "elements": ["Light", "Electric"]
+    ]
   }
 }

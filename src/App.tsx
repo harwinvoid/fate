@@ -7,12 +7,11 @@ import {
   NavLink,
 } from "react-router-dom";
 import "./App.css";
-import ElementMatrix from "./components/ElementMatrix";
+// import ElementMatrix from "./components/ElementMatrix";
 import PetList from "./components/PetList";
 import EventLog from "./components/EventLog";
 import logo from "./assets/logo.png";
-import mockPets from "./data/pets";
-import { Pet } from "./types/pets";
+
 
 // 示例数据，实际应该从API获取
 
@@ -23,36 +22,36 @@ const App: React.FC = () => {
         <header className="app-header">
           <img src={logo} alt="Fate" className="logo" />
           <nav className="nav-menu">
-            <NavLink
+            {/* <NavLink
               to="/"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
             >
               元素矩阵
-            </NavLink>
+            </NavLink> */}
             <NavLink
-              to="/pets"
+              to="/fate/"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
             >
-              宠物图鉴
+              LINGS
             </NavLink>
             <NavLink
-              to="/fate"
+              to="/fate/battles"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
             >
-              战绩查询
+              BATTLES
             </NavLink>
           </nav>
         </header>
         <main className="app-main">
           <div className="app-container">
             <Routes>
-              <Route
+              {/* <Route
                 path="/"
                 element={
                   <div className="matrix-section">
@@ -62,17 +61,17 @@ const App: React.FC = () => {
                     <ElementMatrix />
                   </div>
                 }
-              />
+              /> */}
               <Route
-                path="/pets"
+                path="/fate"
                 element={
                   <div className="pets-section">
-                    <PetList pets={mockPets as Pet[]} />
+                    <PetList />
                   </div>
                 }
               />
               <Route
-                path="/fate"
+                path="/fate/battles"
                 element={
                   <div className="events-section">
                     <div className="section-header">
