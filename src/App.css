@@ -332,8 +332,13 @@ tr:hover td {
     padding: 0 1.5rem;
   }
 
+  .app-container {
+    padding: 0;
+  }
+
   .app-main {
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    padding: 1.5rem 0;
   }
 
   .section-header {

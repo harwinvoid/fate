@@ -12,7 +12,6 @@ import PetList from "./components/PetList";
 import EventLog from "./components/EventLog";
 import logo from "./assets/logo.png";
 
-
 // 示例数据，实际应该从API获取
 
 const App: React.FC = () => {
@@ -70,17 +69,7 @@ const App: React.FC = () => {
                   </div>
                 }
               />
-              <Route
-                path="/fate/battles"
-                element={
-                  <div className="events-section">
-                    <div className="section-header">
-                      <h1>战绩查询</h1>
-                    </div>
-                    <EventLog />
-                  </div>
-                }
-              />
+              <Route path="/fate/battles" element={<EventLog />} />
             </Routes>
           </div>
         </main>
