@@ -10,6 +10,7 @@ import "./App.css";
 // import ElementMatrix from "./components/ElementMatrix";
 import PetList from "./components/PetList";
 import EventLog from "./components/EventLog";
+import ScrollToTop from "./components/ScrollToTop";
 import logo from "./assets/logo.png";
 
 // 示例数据，实际应该从API获取
@@ -73,6 +74,7 @@ const App: React.FC = () => {
             </Routes>
           </div>
         </main>
+        <ScrollToTop />
       </div>
     </Router>
   );
