@@ -335,12 +335,12 @@ export default {
     "stat": { "hp": 13366, "atk": 3100, "def": 750, "spd": 720, "int": 600 },
     "skills": [
       {
-        "attribute": "Fire",
+        "attribute": "Water",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
-        "attribute": "Water",
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack *4) if Target's Defense > 1000, otherwise (Attack*3) to a target."
       }
@@ -350,12 +350,12 @@ export default {
     "stat": { "hp": parseInt(`${13366 * 1.05}`), "atk": parseInt(`${3100 * 1.05}`), "def": parseInt(`${750 * 1.05}`), "spd": parseInt(`${720 * 1.05}`), "int": parseInt(`${600 * 1.05}`) },
     "skills": [
       {
-        "attribute": "Fire",
+        "attribute": "Water",
         "type": "Single",
         "description": "Deals damage equal to (Attack * 2) to a target."
       },
       {
-        "attribute": "Water",
+        "attribute": "Fire",
         "type": "Single",
         "description": "Deals damage equal to (Attack *4) if Target's Defense > 1000, otherwise (Attack*3) to a target."
       }
