@@ -572,6 +572,36 @@ export default {
       }
     ]
   },
+  "70": {
+    "stat": { "hp": 12810, "atk": 3129, "def": 577, "spd": 735, "int": 619 },
+    "skills": [
+      {
+        "attribute": "Fire",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 2.5) to all target. if there is element on self, clear all element on self and deal damage equal to (Attack * 0.8) to all target instead."
+      }
+    ]
+  },
+  "10070": {
+    "stat": { "hp": parseInt(`${12810 * 1.05}`), "atk": parseInt(`${3129 * 1.05}`), "def": parseInt(`${577 * 1.05}`), "spd": parseInt(`${735 * 1.05}`), "int": parseInt(`${619 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Fire",  
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 2.5) to all target. if there is element on self, clear all element on self and deal damage equal to (Attack * 0.8) to all target instead."
+      }
+    ]
+  },
   "71": {
     "stat": { "hp": 14650, "atk": 2250, "def": 870, "spd": 621, "int": 640 },
     "skills": [
@@ -689,6 +719,36 @@ export default {
         "attribute": "Light",
         "type": "Aoe",
         "description": "Deal damage equal to (Attack * 2.5) to all enemies, then reapply Light Element to all enemies."
+      }
+    ]
+  },
+  "78": {
+    "stat": { "hp": 9850, "atk": 3460, "def": 850, "spd": 689, "int": 420 },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 2.4) if target has light Element, otherwise (Attack * 1.5) to all enemies."
+      }
+    ]
+  },
+  "10078": {
+    "stat": { "hp": parseInt(`${9850 * 1.05}`), "atk": parseInt(`${3460 * 1.05}`), "def": parseInt(`${850 * 1.05}`), "spd": parseInt(`${689 * 1.05}`), "int": parseInt(`${420 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Nature",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.2) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 2.4) if target has light Element, otherwise (Attack * 1.5) to all enemies."
       }
     ]
   },
