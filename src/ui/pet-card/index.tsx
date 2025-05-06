@@ -41,7 +41,7 @@ export const PetCard = (props: { pet: Pet }) => {
       >
         <div className="pet-image-inner">
           <div className="pet-image-front">
-            <img src={pet.image} alt={pet.name} className="pet-image" />
+            <img loading="lazy" src={pet.image} alt={pet.name} className="pet-image" />
             <div className="pet-elements">
               {pet.skills?.map((skill, index) => (
                 <div
