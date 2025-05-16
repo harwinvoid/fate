@@ -573,7 +573,7 @@ export default {
     ]
   },
   "70": {
-    "stat": { "hp": 12810, "atk": 3129, "def": 577, "spd": 735, "int": 619 },
+    "stat": { "hp": 12200, "atk": 2980, "def": 550, "spd": 700, "int": 590 },
     "skills": [
       {
         "attribute": "Fire",
@@ -588,7 +588,7 @@ export default {
     ]
   },
   "10070": {
-    "stat": { "hp": parseInt(`${12810 * 1.05}`), "atk": parseInt(`${3129 * 1.05}`), "def": parseInt(`${577 * 1.05}`), "spd": parseInt(`${735 * 1.05}`), "int": parseInt(`${619 * 1.05}`) },
+    "stat": { "hp": parseInt(`${12200 * 1.05}`), "atk": parseInt(`${2980 * 1.05}`), "def": parseInt(`${550 * 1.05}`), "spd": parseInt(`${700 * 1.05}`), "int": parseInt(`${590 * 1.05}`) },
     "skills": [
       {
         "attribute": "Fire",  
