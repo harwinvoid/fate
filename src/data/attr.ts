@@ -662,6 +662,36 @@ export default {
       }
     ]
   },
+  "74": {
+    "stat": { "hp": 15604, "atk": 2780, "def": 450, "spd": 590, "int": 652 },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 1) to all enemies, then reduce all target's speed by 10%"
+      }
+    ]
+  },
+  "10074": {
+    "stat": { "hp": parseInt(`${15604 * 1.05}`), "atk": parseInt(`${2780 * 1.05}`), "def": parseInt(`${450 * 1.05}`), "spd": parseInt(`${590 * 1.05}`), "int": parseInt(`${652 * 1.05}`) },
+    "skills": [
+      {
+        "attribute": "Ice",
+        "type": "Single",
+        "description": "Deals damage equal to (Attack * 2.5) to a target."
+      },
+      {
+        "attribute": "Dark",
+        "type": "Aoe",
+        "description": "Deals damage equal to (Attack * 1) to all enemies, then reduce all target's speed by 10%"
+      }
+    ]
+  },
   "75": {
     "stat": { "hp": 12230, "atk": 2750, "def": 680, "spd": 745, "int": 630 },
     "skills": [
