@@ -1131,14 +1131,47 @@ export default {
       },
     ],
   },
+  "84": {
+    stat: { hp: 9990, atk: 3200, def: 580, spd: 710, int: 660 },
+    skills: [
+      {
+        attribute: "Nature",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 3) to a target, if target's Attack is lower than self's, then deals damage equal to (Attack * 4) to a target.",
+      },
+    ],
+  },
+  "10084": {
+    stat: {
+      hp: parseInt(`${9990 * 1.05}`),
+      atk: parseInt(`${3200 * 1.05}`),
+      def: parseInt(`${580 * 1.05}`),
+      spd: parseInt(`${710 * 1.05}`),
+      int: parseInt(`${660 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Nature",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 3) to a target, if target's Attack is lower than self's, then deals damage equal to (Attack * 4) to a target.",
+      },
+    ],
+  },
   "10005": {
     stat: { hp: 9935, atk: 2583, def: 630, spd: 849, int: 581 },
     skills: [
-      // {
-      //   "attribute": "Fire",
-      //   "type": "Single",
-      //   "description": "Deals damage equal to (Attack + 2) to a target."
-      // },
       {
         attribute: "Electric",
         type: "Single",
