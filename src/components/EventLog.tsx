@@ -5,7 +5,6 @@ import BattleEvent from "./BattleEvent";
 
 // Constants
 const SONIC_RPC_URL = "https://rpc.soniclabs.com/";
-const CONTRACT_ADDRESS = "0x71672b554d309bcd728df00028717d24b46c7229";
 const SONICSCAN_API_URL = "https://api.sonicscan.org/api";
 const API_KEY = "NQ1XVV7U3PIF2FF5DUPNZPQVG61S8QF61W";
 const BATTLE_METHOD_ID = "0x2fa9ca3d";
@@ -90,6 +89,11 @@ const EventLog: React.FC = () => {
       console.error("Error getting block number:", error);
       return null;
     }
+  };
+
+  const randomDelay = (min: number = 100, max: number = 1000) => {
+    const delay = Math.floor(Math.random() * (max - min + 1)) + min;
+    return new Promise(resolve => setTimeout(resolve, delay));
   };
 
   const decodeBattleResult = (log: ethers.Log): BlockchainEvent["battleResult"] => {
@@ -189,17 +193,21 @@ const EventLog: React.FC = () => {
     if (!hash) return [];
 
     try {
+      await randomDelay();
       const provider = new ethers.JsonRpcProvider(SONIC_RPC_URL);
       const receipt = await provider.getTransactionReceipt(hash);
       if (!receipt) return [];
 
+     
+
       const relevantLogs = receipt.logs.filter(
         log => 
-          log.address.toLowerCase() === CONTRACT_ADDRESS.toLowerCase() &&
           log.topics[0] === EVENT_TYPES.BattleResultV2
       );
 
+
       const processLog = async (log: ethers.Log): Promise<BlockchainEvent> => {
+        await randomDelay();
         const block = await provider.getBlock(log.blockNumber);
         const timestamp = block ? new Date(block.timestamp * 1000).toLocaleString() : "";
         const battleResult = decodeBattleResult(log);
@@ -235,6 +243,8 @@ const EventLog: React.FC = () => {
         const battleTransactions = data.result.filter(
           (tx: Transaction) => tx.methodId === BATTLE_METHOD_ID
         );
+
+       
 
         const allEvents: BlockchainEvent[] = [];
         for (let i = 0; i < battleTransactions.length; i += CONCURRENT_BATCH_SIZE) {
