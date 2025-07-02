@@ -1143,7 +1143,7 @@ export default {
         attribute: "Water",
         type: "Single",
         description:
-          "Deals damage equal to (Health * 0.4 + Target Health * 0.4) to a target.",
+          "Deals damage equal to (Health * 0.4 + Target Health * 0.4) to a target (Max damage can not more than atk * 4)",
       },
     ],
   },
@@ -1165,7 +1165,7 @@ export default {
         attribute: "Water",
         type: "Single",
         description:
-          "Deals damage equal to (Health * 0.4 + Target Health * 0.4) to a target.",
+          "Deals damage equal to (Health * 0.4 + Target Health * 0.4) to a target (Max damage can not more than atk * 4)",
       },
     ],
   },
