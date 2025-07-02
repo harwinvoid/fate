@@ -718,6 +718,121 @@ export default {
       },
     ],
   },
+  "56": {
+    stat: { hp: 12500, atk: 3250, def: 720, spd: 550, int: 560 },
+    skills: [
+      {
+        attribute: "Dark",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2.2) to a target, if opponent is not the leader, deal damage equal to (Attack * 5) ",
+      },
+    ],
+  },
+  "10056": {
+    stat: {
+      hp: parseInt(`${12500 * 1.05}`),
+      atk: parseInt(`${3250 * 1.05}`),
+      def: parseInt(`${720 * 1.05}`),
+      spd: parseInt(`${550 * 1.05}`),
+      int: parseInt(`${560 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Dark",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Aoe",
+        description:
+          "Deals damage equal to (Attack * 2.2) to a target, if opponent is not the leader, deal damage equal to (Attack * 5) ",
+      },
+    ],
+  },
+  "57": {
+    stat: { hp: 13355, atk: 2840, def: 980, spd: 705, int: 580 },
+    skills: [
+      {
+        attribute: "Dark",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 0.5 + Speed * 3) to a target, self speed + 300",
+      },
+    ],
+  },
+  "10057": {
+    stat: {
+      hp: parseInt(`${13355 * 1.05}`),
+      atk: parseInt(`${2840 * 1.05}`),
+      def: parseInt(`${980 * 1.05}`),
+      spd: parseInt(`${705 * 1.05}`),
+      int: parseInt(`${580 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Dark",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description:
+          "Deal damage equal to (Attack * 0.5 + Speed * 3) to a target, self speed + 300",
+      },
+    ],
+  },
+  "58": {
+    stat: { hp: 11200, atk: 3115, def: 820, spd: 711, int: 700 },
+    skills: [
+      {
+        attribute: "Nature",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Aoe",
+        description:
+          "Apply Dark Element to all allies, increase 40% speed, lasts for 1 round",
+      },
+    ],
+  },
+  "10058": {
+    stat: {
+      hp: parseInt(`${11200 * 1.05}`),
+      atk: parseInt(`${3115 * 1.05}`),
+      def: parseInt(`${820 * 1.05}`),
+      spd: parseInt(`${711 * 1.05}`),
+      int: parseInt(`${700 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Nature",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Aoe",
+        description:
+          "Apply Dark Element to all allies, increase 40% speed, lasts for 1 round",
+      },
+    ],
+  },
+
   "69": {
     stat: { hp: 10560, atk: 2560, def: 790, spd: 740, int: 540 },
     skills: [
