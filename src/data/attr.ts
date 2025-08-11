@@ -832,7 +832,112 @@ export default {
       },
     ],
   },
-
+  "62": {
+    stat: { hp: Math.ceil(14175 / 1.05), atk: Math.ceil(2866 / 1.05), def: Math.ceil(1732 / 1.05), spd: Math.ceil(535 / 1.05), int: Math.ceil(724 / 1.05) },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2 + Defense) to a target. ignore opponent's defense and element overflow",
+      },
+    ],
+  },
+  "10062": {
+    stat: { hp: 14175, atk: 2866, def: 1732, spd: 535, int: 724 },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2 + Defense) to a target. ignore opponent's defense and element overflow",
+      },
+    ],
+  },
+  "63": {
+    stat: { hp: 11750, atk: 3950, def: 1050, spd: 505, int: 560 },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Fire",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2.5) to a target. if the target affected by Water, deals (Attack * 3.5) instead.",
+      },
+    ],
+  },
+  "10063": {
+    stat: {
+      hp: parseInt(`${11750 * 1.05}`),
+      atk: parseInt(`${3950 * 1.05}`),
+      def: parseInt(`${1050 * 1.05}`),
+      spd: parseInt(`${505 * 1.05}`),
+      int: parseInt(`${560 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Fire",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2.5) to a target. if the target affected by Water, deals (Attack * 3.5) instead.",
+      },
+    ],
+  },
+  "64": {
+    stat: { hp: 10500, atk: 3120, def: 1130, spd: 650, int: 580 },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Ice",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2) + (Defense * 2) to a target. Increases own Speed by 200",
+      },
+    ],
+  },
+  "10064": {
+    stat: {
+      hp: parseInt(`${10500 * 1.05}`),
+      atk: parseInt(`${3120 * 1.05}`),
+      def: parseInt(`${1130 * 1.05}`),
+      spd: parseInt(`${650 * 1.05}`),
+      int: parseInt(`${580 * 1.05}`),
+    },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Ice",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2) + (Defense * 2) to a target. Increases own Speed by 200",
+      },
+    ],
+  },
   "69": {
     stat: { hp: 10560, atk: 2560, def: 790, spd: 740, int: 540 },
     skills: [
@@ -1281,6 +1386,138 @@ export default {
         type: "Single",
         description:
           "Deals damage equal to (Attack * 3) to a target, if target's Attack is lower than self's, then deals damage equal to (Attack * 4) to a target.",
+      },
+    ],
+  },
+  "85": {
+    stat: { hp: 12650, atk: 3120, def: 1240, spd: 680, int: 380 },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (attack * 2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Aoe",
+        description:
+          "Deals damage equal to (Attack * 1.5) to a target. ignore 50% target's defense",
+      },
+    ],
+  },
+  "10085": {
+    stat: { hp: 13282, atk: 3276, def: 1302, spd: 714, int: 399 },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (attack * 2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Aoe",
+        description:
+          "Deals damage equal to (Attack * 1.5) to a target. ignore 50% target's defense",
+      },
+    ],
+  },
+  "87": {
+    stat: { hp: 12040, atk: 2840, def: 1120, spd: 610, int: 520 },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2.2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2 + Speed * 5) to a target.",
+      },
+    ],
+  },
+  "10087": {
+    stat: { hp: 12642, atk: 2982, def: 1176, spd: 640, int: 546 },
+    skills: [
+      {
+        attribute: "Fire",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 2.2) to a target.",
+      },
+      {
+        attribute: "Electric",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2 + Speed * 5) to a target.",
+      },
+    ],
+  },
+  "88": {
+    stat: {
+      hp: Math.ceil(12079 / 1.05),
+      atk: Math.ceil(3097 / 1.05),
+      def: Math.ceil(1312 / 1.05),
+      spd: Math.ceil(771 / 1.05),
+      int: Math.ceil(693 / 1.05),
+    },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2) to a target. if the user's Speed is higher than target's, deals (Attack * 4) instead.",
+      },
+    ],
+  },
+  "10088": {
+    stat: { hp: 12079, atk: 3097, def: 1312, spd: 771, int: 693 },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Dark",
+        type: "Single",
+        description:
+          "Deals damage equal to (Attack * 2) to a target. if the user's Speed is higher than target's, deals (Attack * 4) instead.",
+      },
+    ],
+  },
+  "89": {
+    stat: { hp: 12200, atk: 2750, def: 1140, spd: 625, int: 510 },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Light",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 3) to a target. if the user has any element, deals (Attack * 5) instead.",
+      },
+    ],
+  },
+  "10089": {
+    stat: { hp: parseInt(`${12200 * 1.05}`), atk: parseInt(`${2750 * 1.05}`), def: parseInt(`${1140 * 1.05}`), spd: parseInt(`${625 * 1.05}`), int: parseInt(`${510 * 1.05}`) },
+    skills: [
+      {
+        attribute: "Ice",
+        type: "Single",   
+        description: "Deals damage equal to (Defense * 4) to a target.",
+      },
+      {
+        attribute: "Light",
+        type: "Single",
+        description: "Deals damage equal to (Attack * 3) to a target. if the user has any element, deals (Attack * 5) instead.",  
       },
     ],
   },
